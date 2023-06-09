@@ -22,7 +22,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_grifo');
             $table->foreign('id_grifo')->references('id')->on('grifo');
 
-
+            $table->string('descripcion')->nullable();
+            $table->integer('estado')->default(1);
             $table->timestamps();
         });
     }
