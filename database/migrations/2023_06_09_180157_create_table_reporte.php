@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('reporte', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('usuario');
+
+            $table->unsignedBigInteger('id_grifo');
+            $table->foreign('id_grifo')->references('id')->on('grifo');
+
+
             $table->timestamps();
         });
     }

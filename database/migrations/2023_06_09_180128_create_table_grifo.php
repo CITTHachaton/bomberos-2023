@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('grifo', function (Blueprint $table) {
             $table->id();
+            $table->string('codigo')->unique();
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->json('ubicacion')->nullable();
+            $table->integer('estado')->default(1);
+
             $table->timestamps();
         });
     }
