@@ -1,0 +1,68 @@
+{
+  "compañías": [
+    {
+      "nombre": "Primera Compañía del Cuerpo de Bomberos de Maipú",
+      "coordenadas": {
+        "latitud": -33.5114597,
+        "longitud": -70.7738438,
+        "zoom": "15z"
+      }
+    },
+    {
+      "nombre": "Segunda Compañía de Bomberos de Maipú",
+      "coordenadas": {
+        "latitud": -33.4926809,
+        "longitud": -70.8100534,
+        "zoom": "12z"
+      }
+    },
+    {
+      "nombre": "Tercera Compañía del Cuerpo de Bomberos de Maipú",
+      "coordenadas": {
+        "latitud": -33.5108427,
+        "longitud": -70.7635454,
+        "zoom": "15.52z"
+      }
+    },
+    {
+      "nombre": "Cuarta Compañía de Bomberos de Maipú",
+      "coordenadas": {
+        "latitud": -33.546234,
+        "longitud": -70.7771769,
+        "zoom": "17z"
+      }
+    },
+    {
+      "nombre": "Quinta Compañía del Cuerpo de Bomberos de Maipú",
+      "coordenadas": {
+        "latitud": -33.5545032,
+        "longitud": -70.8170647,
+        "zoom": "14z"
+      }
+    },
+    {
+      "nombre": "Sexta Compañía del Cuerpo de Bomberos de Maipú",
+      "coordenadas": {
+        "latitud": -33.533468,
+        "longitud": -70.7813644,
+        "zoom": "16z"
+      }
+    },
+    {
+      "nombre": "Séptima Compañía del Cuerpo de Bomberos de Maipú",
+      "coordenadas": {
+        "latitud": -33.4701127,
+        "longitud": -70.8615736,
+        "zoom": "12z"
+      }
+    },
+    {
+      "nombre": "Octava Compañía del Cuerpo de Bomberos de Maipú",
+      "coordenadas": {
+        "latitud": -33.5104911,
+        "longitud": -70.8049849,
+        "zoom": "15z"
+      }
+    }
+  ]
+}
