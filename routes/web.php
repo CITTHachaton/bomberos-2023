@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GrifoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsuarioController;
@@ -17,12 +18,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ HomeController::class,'index'])->name('root');
-Route::get('/home', [ HomeController::class,'home'])->name('home');
-
-Route::get('mapa', [ HomeController::class,'mapa'])->name('mapa');
 Route::get('login', [ HomeController::class,'login'])->name('login');
+Route::post('login', [ AuthController::class,'login'])->name('login');
 
-Route::get('grifos', [GrifoController::class,'index'])->name('grifos.index');
-Route::get('grifos/{id}', [GrifoController::class,'show'])->name('grifos.show');
+Route::middleware('auth.usuario')->group( function () {
+  Route::get('/home', [ HomeController::class,'home'])->name('home');
 
-Route::resource('usuarios', UsuarioController::class);
+  Route::get('mapa', [ HomeController::class,'mapa'])->name('mapa');
+
+  Route::get('grifos', [GrifoController::class,'index'])->name('grifos.index');
+  Route::get('grifos/{id}', [GrifoController::class,'show'])->name('grifos.show');
+
+  Route::resource('usuarios', UsuarioController::class);
+});

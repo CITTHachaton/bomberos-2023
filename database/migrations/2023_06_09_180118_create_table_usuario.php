@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Usuario;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,6 +25,26 @@ return new class extends Migration
         });
 
 
+        $u = new Usuario();
+        $u->nombre = "Benjamin";
+        $u->correo = "benja@gmail.com";
+        $u->password = "123123";
+        $u->cargo = "Bombero";
+        $u->save();
+
+        $u = new Usuario();
+        $u->nombre = "Carlos";
+        $u->correo = "carlos@gmail.com";
+        $u->password = "123123";
+        $u->cargo = "Capitan Bombero";
+        $u->save();
+
+        $u = new Usuario();
+        $u->nombre = "Leonardo";
+        $u->correo = "leonardo@gmail.com";
+        $u->password = "123123";
+        $u->cargo = "Bombero";
+        $u->save();
     }
 
     /**
