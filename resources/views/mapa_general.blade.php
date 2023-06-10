@@ -60,6 +60,10 @@
   //   L.circleMarker([point.lat, point.lng], { color: point.color }).addTo(map);
   // }
 
+
+
+
+
   for (var i = 0; i < data.length; i++) {
     var point = data[i];
     var marker = L.marker([point.latitud, point.longitud], {

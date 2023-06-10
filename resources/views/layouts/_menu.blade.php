@@ -25,13 +25,13 @@
               <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="{{ route('mapa') }}">
                   <i class="fa-solid fa-earth-americas"></i>
-                  Mapa
+                  Cercanos
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2 text-danger" href="{{ route('mapa') }}">
+                <a class="nav-link d-flex align-items-center gap-2 text-danger" href="{{ route('mapa_general') }}">
                   <i class="fa-solid fa-fire"></i>
-                  Focos
+                  Mapa global
                 </a>
               </li>
           </ul>
