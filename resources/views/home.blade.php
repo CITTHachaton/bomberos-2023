@@ -65,26 +65,38 @@
 @endpush
 @section('content')
 
-<nav class="mobile-nav justify-content-between">
-  <a href="#" class="active">
+
+<div class="container">
+  <div class="row justify-content-center">
+    <h1 class="mt-3">Hola {{ current_user()->nombre }} 🧑‍🚒👨‍🚒🚒</h1>
+    <div class="col-md-3 text-center">
+      <img src="{{ asset('img/bomberoslogo.png') }}" alt="">
+
+    </div>
+  </div>
+</div>
+
+<nav class="mobile-nav d-lg-none">
+  {{-- <a href="#" class="active">
     <i class="fa-solid fa-faucet-drip"></i>
     Grifos
-  </a>
+  </a> --}}
   <a href="#">
     <i class="fa-solid fa-earth-americas"></i>
-    Mapa
+    Inicio
   </a>
-  <a href="#" class="circle">
-    <i class="fas fa-fire"></i>
+  <a href="{{ route('mapa') }}" class="circle">
+    <i class="fa-solid fa-earth-americas"></i>
+    Mapa
   </a>
   <a href="#">
     <i class="fa-solid fa-fire"></i>
     Bomberos
   </a>
-  <a href="#">
+  {{-- <a href="#">
     <i class="fas fa-user"></i>
     Profile
-  </a>
+  </a> --}}
 </nav>
 
 @endsection

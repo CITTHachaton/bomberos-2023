@@ -20,6 +20,16 @@ class HomeController extends Controller
   }
 
   public function mapa() {
-    return view('mapa');
+    $grifos_raw = [];
+
+    $grifos = Grifo::get();
+
+    foreach ($grifos as $g) {
+      array_push($grifos_raw, $g->get_rawr_info());
+    }
+
+    // return $grifos_raw;
+
+    return view('mapa', compact('grifos_raw'));
   }
 }

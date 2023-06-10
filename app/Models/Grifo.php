@@ -11,13 +11,11 @@ class Grifo extends Model
   protected $table = 'grifo';
 
   const ESTADOS = [
-    1 => 'Pendiente',
-    2 => 'Disponible',
-    3 => 'Con problemas',
-    4 => 'En reparacion',
-    5 => 'Deshabilitado',
-    6 => 'Eliminado',
-    7 => 'Reportado'
+    1 => ['Pendiente', 'dark'],
+    2 => ['Disponible', 'success'],
+    3 => ['Con problemas', 'warning'],
+    4 => ['Abierto', 'primary' ],
+    5 => ['Eliminado', 'danger' ]
   ];
 
   protected $fillable = [
@@ -54,6 +52,36 @@ class Grifo extends Model
     public function setObservacionesAttribute($value)
     {
         $this->attributes['observaciones'] = $this->setNullableFields($value);
+    }
+
+    public function getStatus() {
+      return self::ESTADOS[$this->estatus];
+    }
+
+    function getIcon() {
+      switch ($this->estatus) {
+        case 1:
+          return asset('img/negro.svg');
+        case 2:
+          return asset('img/verde.svg');
+        case 3:
+          return asset('img/amarillo.svg');
+        case 4:
+          return asset('img/blue.svg');
+        case 5:
+          return asset('img/rojo.svg');
+      }
+    }
+
+    public function get_rawr_info() {
+      return [
+        'id' => $this->id,
+        'estado' => $this->getStatus()[0],
+        'color' => $this->getStatus()[1],
+        'latitud' => $this->latitud,
+        'longitud' => $this->longitud,
+        'img' => $this->getIcon()
+      ];
     }
 
 }
