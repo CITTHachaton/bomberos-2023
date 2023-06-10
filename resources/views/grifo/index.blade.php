@@ -40,6 +40,8 @@
             <th scope="col">Ubicación</th>
             <th scope="col">Latitud/Longitud</th>
             <th scope="col"></th>
+            <th scope="col">Status</th>
+            <th scope="col">Editar</th>
         </tr>
     </thead>
     <tbody>
@@ -56,6 +58,38 @@
                 <i class="fa-solid fa-earth-americas text-danger"></i>
               </a>
 
+            </td>
+            <td>
+              @php
+                  $estado = "";
+                  $color = "";
+                  switch ($gri->estatus) {
+                      case 1:
+                          $estado = "Pendiente";
+                          $color = "dark";
+                          break;
+                      case 2:
+                          $estado = "Disponible";
+                          $color = "success";
+                          break;
+                      case 3:
+                          $estado = "Con problemas";
+                          $color = "warning";
+                          break;
+                      case 4:
+                          $estado = "Abierto";
+                          $color = "primary";
+                          break;
+                      case 5:
+                          $estado = "No existe";
+                          $color = "danger";
+                          break;
+                  }
+              @endphp
+                    <span class="badge bg-{{ $color }} text-white">{{ $estado }} </span>
+            </td>
+            <td>
+              <a class="btn btn-warning" href="{{ route('grifos.edit',$gri->id) }}">Editar</a>
             </td>
         </tr>
       @endforeach

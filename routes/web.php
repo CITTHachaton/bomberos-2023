@@ -28,6 +28,8 @@ Route::middleware('auth.usuario')->group( function () {
 
   Route::get('grifos', [GrifoController::class,'index'])->name('grifos.index');
   Route::get('grifos/{id}', [GrifoController::class,'show'])->name('grifos.show');
+  Route::get('grifos/{id}/edit',[GrifoController::class,'edit'])->name('grifos.edit');
+  Route::put('grifos/{id}/edit',[GrifoController::class,'update'])->name('grifos.update');
 
   Route::resource('usuarios', UsuarioController::class);
 });
