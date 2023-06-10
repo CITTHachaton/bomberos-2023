@@ -1,0 +1,25 @@
+  /* Color primario: Rojo oscuro */
+  .bg-bombero-primary {
+    background-color: #A20000;
+  }
+
+  /* Color secundario 1: Gris oscuro */
+  .bg-bombero-secondary-1 {
+    background-color: #333333;
+  }
+
+  /* Color secundario 2: Amarillo */
+  .bg-bombero-secondary-2 {
+    background-color: #FFD700;
+  }
+
+  /* Color de acento 1: Blanco */
+  .bg-bombero-accent-1 {
+    background-color: #FFFFFF;
+  }
+
+  /* Color de acento 2: Negro */
+  .bg-bombero-accent-2 {
+    background-color: #000000;
+  }
+
