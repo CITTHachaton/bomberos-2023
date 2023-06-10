@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('estado')->default(0);
             $table->timestamps();
         });
+
+
     }
 
     /**

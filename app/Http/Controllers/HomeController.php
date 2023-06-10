@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
+    public function index() {
+      return view('index');
+    }
+
+    public function mapa() {
+      return view('index');
+    }
+
+    public function grifos() {
       return view('index');
     }
 
