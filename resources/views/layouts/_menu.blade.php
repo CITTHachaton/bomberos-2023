@@ -11,24 +11,29 @@
       <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
           <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+                <a class="nav-link d-flex align-items-center gap-2 active" href="{{ route('home') }}">
                   <i class="fa-solid fa-house-user"></i>
                   Inicio
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="{{ route('grifos') }}">
                   <i class="fa-solid fa-faucet-drip"></i>
                   Listado de grifo
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="{{ route('mapa') }}">
                   <i class="fa-solid fa-earth-americas"></i>
                   Mapa
                 </a>
-            </li>
-
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2 text-danger" href="{{ route('mapa') }}">
+                  <i class="fa-solid fa-fire"></i>
+                  Focos
+                </a>
+              </li>
           </ul>
 
           <hr class="my-3">
@@ -43,7 +48,7 @@
                   </a>
               </li> --}}
               <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center gap-2" href="#">
+                  <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
                     <i class="fa-solid fa-fire"></i>
                     Bomberos
                   </a>

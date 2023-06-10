@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ HomeController::class,'index'])->name('home');
+Route::get('mapa', [ HomeController::class,'mapa'])->name('mapa');
+Route::get('grifos', [ HomeController::class,'grifos'])->name('grifos');
