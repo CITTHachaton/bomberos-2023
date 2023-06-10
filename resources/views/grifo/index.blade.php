@@ -52,7 +52,7 @@
             <td>{{ $gri->ubicacion }}</td>
             <td><code>{{ $gri->latitud . ' ' . $gri->longitud }}</code></td>
             <td>
-              <a href="{{ route('grifos.show', $gri->id) }}" target="_blank">
+              <a href="{{ route('grifos.show', $gri->id) }}" target="_blank" class="btn btn-sm btn-primary">
                 <i class="fa-solid fa-earth-americas text-danger"></i>
               </a>
 

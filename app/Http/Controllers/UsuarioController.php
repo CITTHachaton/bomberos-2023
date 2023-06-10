@@ -39,11 +39,12 @@ class UsuarioController extends Controller
     {
         $request->validate([
           'nombre' => 'required',
-          'correo' => 'required|unique:users',
+          'correo' => 'required|unique:usuario',
           'password' => 'required',
       ]);
 
       Usuario::create($request->all());
+
 
       return redirect()->route('usuarios.index')->with('success', 'Usuario creado exitosamente.');
     }
@@ -54,8 +55,9 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
+        $usuario = Usuario::findOrFail($id);
+
         return view('usuarios.show', compact('usuario'));
     }
 
@@ -65,9 +67,10 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        return view('usuarios.edit', compact('usuario'));
+    public function edit($id) {
+      $usuario = Usuario::findOrFail($id);
+
+      return view('usuarios.edit', compact('usuario'));
     }
 
     /**
@@ -77,11 +80,12 @@ class UsuarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
+      $usuario = Usuario::findOrFail($id);
+
       $request->validate([
           'nombre' => 'required',
-          'correo' => 'required|unique:usuarios,correo,' . $usuario->id,
+          'correo' => 'required|unique:usuario,correo,' . $usuario->id,
           'password' => 'required',
       ]);
 
@@ -98,6 +102,8 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
+      $usuario = Usuario::findOrFail($id);
+
       $usuario->delete();
 
       return redirect()->route('usuarios.index')->with('success', 'Usuario eliminado exitosamente.');
