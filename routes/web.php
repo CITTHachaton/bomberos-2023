@@ -24,6 +24,7 @@ Route::post('login', [ AuthController::class,'login'])->name('login');
 Route::middleware('auth.usuario')->group( function () {
   Route::get('/home', [ HomeController::class,'home'])->name('home');
 
+  Route::get('mapa_general', [ HomeController::class,'mapa_general'])->name('mapa_general');
   Route::get('mapa', [ HomeController::class,'mapa'])->name('mapa');
 
   Route::get('grifos', [GrifoController::class,'index'])->name('grifos.index');
