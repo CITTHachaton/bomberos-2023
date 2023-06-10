@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GrifoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*

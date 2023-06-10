@@ -48,7 +48,7 @@
                   </a>
               </li> --}}
               <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center gap-2 text-dark" href="#">
+                  <a class="nav-link d-flex align-items-center gap-2 text-dark" href="{{ route ('usuarios.index')}}">
                     <i class="fa-solid fa-fire"></i>
                     Bomberos
                   </a>
