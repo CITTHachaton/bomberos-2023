@@ -17,7 +17,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="{{ route('grifos') }}">
+                <a class="nav-link d-flex align-items-center gap-2" href="{{ route('grifos.index') }}">
                   <i class="fa-solid fa-faucet-drip"></i>
                   Listado de grifo
                 </a>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GrifoController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ HomeController::class,'index'])->name('home');
 Route::get('mapa', [ HomeController::class,'mapa'])->name('mapa');
-Route::get('grifos', [ HomeController::class,'grifos'])->name('grifos');
+
+Route::get('grifos', [GrifoController::class,'index'])->name('grifos.index');
+Route::get('grifos/{id}', [GrifoController::class,'show'])->name('grifos.show');

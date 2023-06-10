@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\APIGrifoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('v1/grifos_json', [ APIGrifoController::class,'indexJson'])->name('grifosJson.index');
+Route::get('v1/grifos', [ APIGrifoController::class,'index'])->name('grifos.index');

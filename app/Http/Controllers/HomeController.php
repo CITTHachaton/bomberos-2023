@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Grifo;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,9 +13,5 @@ class HomeController extends Controller
 
   public function mapa() {
     return view('mapa');
-  }
-
-  public function grifos() {
-    return view('grifos');
   }
 }
