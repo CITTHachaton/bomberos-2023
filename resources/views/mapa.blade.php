@@ -31,67 +31,63 @@
 
 
     <h2>Section title</h2>
+    <button onclick="getLocation()">Obtener Geolocalización</button>
     <div class="mt-3">
       <div id="map" class="shadow"></div>
     </div>
   </div>
 </div>
+@endsection
+@push('javascript')
+
+<script>
+  function getLocation() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+          alert('La geolocalización no es compatible con este navegador.');
+      }
+  }
+
+  function showPosition(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      // Enviar la latitud y longitud al servidor para su procesamiento
+      // Puedes hacer una solicitud AJAX a tu ruta de Laravel para guardar los datos en la base de datos
+      // Ejemplo: $.post('/guardar-geolocalizacion', {latitude: latitude, longitude: longitude});
+  }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/heatmap.js/2.0.2/heatmap.min.js"></script>
 <script>
-  // Genera puntos aleatorios en la comuna de Maipú
-  function generateRandomPoints() {
-      var points = [];
 
-      // Límites aproximados de la comuna de Maipú
-      var minLat = -33.550;
-      var maxLat = -33.460;
-      var minLng = -70.830;
-      var maxLng = -70.670;
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
 
-      // Genera 100 puntos aleatorios
-      for (var i = 0; i < 10000; i++) {
-          var lat = Math.random() * (maxLat - minLat) + minLat;
-          var lng = Math.random() * (maxLng - minLng) + minLng;
-          points.push({ lat: lat, lng: lng });
-      }
-
-      return points;
+      // Llamar a la función para mostrar el mapa con la ubicación
+      mostrarMapa(latitude, longitude);
+    });
+  } else {
+    alert("Geolocalización no disponible en tu navegador");
   }
 
-  // Crea el mapa centrado en Maipú
-  var map = L.map('map').setView([-33.505, -70.765], 13);
+  function mostrarMapa(latitude, longitude) {
+    var map = L.map('map').setView([latitude, longitude], 13);
 
-  // Carga el mapa base
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-      maxZoom: 18,
-  }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; OpenStreetMap contributors'
+    }).addTo(map);
 
-  // Crea un objeto Heatmap.js
-  var heatmap = new HeatmapOverlay({
-      radius: 20,
-      maxOpacity: 0.8,
-      scaleRadius: true,
-      latField: 'lat',
-      lngField: 'lng',
-      valueField: 1,
-      gradient: {
-          0.4: 'blue',
-          0.6: 'lime',
-          0.8: 'yellow',
-          1.0: 'red'
-      }
-  });
+    var marker = L.marker([latitude, longitude]).addTo(map);
+    marker.bindPopup("Tu ubicación").openPopup();
+  }
 
-  // Genera puntos aleatorios en Maipú
-  var randomPoints = generateRandomPoints();
-
-  // Agrega los puntos al mapa de calor
-  heatmap.setData({ data: randomPoints });
-
-  // Agrega el mapa de calor al mapa principal
-  map.addLayer(heatmap);
+  mostrarMapa();
 </script>
-@endsection
+
+
+@endpush
