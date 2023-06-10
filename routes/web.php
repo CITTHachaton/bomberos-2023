@@ -20,3 +20,5 @@ Route::get('mapa', [ HomeController::class,'mapa'])->name('mapa');
 
 Route::get('grifos', [GrifoController::class,'index'])->name('grifos.index');
 Route::get('grifos/{id}', [GrifoController::class,'show'])->name('grifos.show');
+
+Route::resource('usuarios', UsuarioController::class);
