@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -14,16 +14,16 @@
             </div>
         @endif
 
-        <form action="{{ route('users.update', $user->id) }}" method="POST">
+        <form action="{{ route('usuarios.update', $user->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $user->nombre }}">
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $usuario->nombre }}">
             </div>
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="correo" name="correo" value="{{ $user->correo }}">
+                <input type="email" class="form-control" id="correo" name="correo" value="{{ $usuario->correo }}">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
@@ -31,7 +31,7 @@
             </div>
             <div class="mb-3">
                 <label for="cargo" class="form-label">Cargo</label>
-                <input type="text" class="form-control" id="cargo" name="cargo" value="{{ $user->cargo }}">
+                <input type="text" class="form-control" id="cargo" name="cargo" value="{{ $usuario->cargo }}">
             </div>
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>

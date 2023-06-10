@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -14,7 +14,7 @@
             </div>
         @endif
 
-        <form action="{{ route('users.store') }}" method="POST">
+        <form action="{{ route('usuarios.store') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>

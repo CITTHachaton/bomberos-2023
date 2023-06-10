@@ -1,9 +1,9 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
         <h2>Lista de usuarios</h2>
-        <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Crear usuario</a>
+        <a href="{{ route('usuarios.create') }}" class="btn btn-primary mb-3">Crear usuario</a>
 
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -19,15 +19,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($users as $user)
+                @foreach($usuarios as $usuario)
                     <tr>
-                        <td>{{ $user->nombre }}</td>
-                        <td>{{ $user->correo }}</td>
-                        <td>{{ $user->cargo }}</td>
+                        <td>{{ $usuario->nombre }}</td>
+                        <td>{{ $usuario->correo }}</td>
+                        <td>{{ $usuario->cargo }}</td>
                         <td>
-                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-info btn-sm">Ver</a>
-                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm">Editar</a>
-                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline">
+                            <a href="{{ route('usuarios.show', $usuario->id) }}" class="btn btn-info btn-sm">Ver</a>
+                            <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-primary btn-sm">Editar</a>
+                            <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario?')">Eliminar</button>
