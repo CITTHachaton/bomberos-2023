@@ -35,6 +35,7 @@ class Grifo extends Model
     'ubicacion',
     'latitud',
     'longitud',
+    'estatus'
   ];
 
     // Mutador para convertir "<Nulo>" en valores nulos

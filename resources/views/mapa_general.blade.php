@@ -73,7 +73,14 @@
         })
     }).addTo(map);
 
-    marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Estado:</b> " + point.estado);
+    if (point.direccion) {
+      marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Direccion:</b> " + point.direccion);
+    } else{
+      marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Estado:</b> " + point.estado);
+
+    }
+
+    // marker.bindPopup("<b>ID:</b> " + point.id + "<br><b>Estado:</b> " + point.estado);
 
     marker.on('mouseover', function(e) {
         this.openPopup();
@@ -82,15 +89,20 @@
     marker.on('mouseout', function(e) {
         this.closePopup();
     });
+
+    marker.on('click', function(e) {
+      console.log(e);
+    });
+
   }
 
-  function mostrarPosicion() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        L.marker([lat, lng]).addTo(map);
-    });
-  }
+  // function mostrarPosicion() {
+  //   navigator.geolocation.getCurrentPosition(function(position) {
+  //       var lat = position.coords.latitude;
+  //       var lng = position.coords.longitude;
+  //       L.marker([lat, lng]).addTo(map);
+  //   });
+  // }
 
 </script>
 @endpush

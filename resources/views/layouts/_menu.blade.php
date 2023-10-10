@@ -29,9 +29,21 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" href="{{ route('mapa2') }}">
+                  <i class="fa-solid fa-earth-americas"></i>
+                  Cercanos 1KM
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2 text-danger" href="{{ route('mapa_general') }}">
                   <i class="fa-solid fa-fire"></i>
                   Mapa global
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2 text-dark" href="{{ route('reporte.index') }}">
+                  <i class="fa-regular fa-chart-bar"></i>
+                  Reportes
                 </a>
               </li>
           </ul>

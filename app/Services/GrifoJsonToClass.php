@@ -18,7 +18,7 @@ class GrifoJsonToClass
     foreach ($data['features'] as $feature) {
         $properties = $feature['properties'];
         $geometry = $feature['geometry'];
-
+        $estatus = rand(1,5);
         Grifo::create([
             'nombre' => $this->filter($properties['Name']),
             'anio' => $this->filter($properties['ANIO']),
@@ -36,6 +36,7 @@ class GrifoJsonToClass
             'ubicacion' => $this->filter($properties['UBICACION']),
             'latitud' => $this->filter($geometry['coordinates'][1]),
             'longitud' => $this->filter($geometry['coordinates'][0]),
+            'estatus' => $estatus
         ]);
     }
   }

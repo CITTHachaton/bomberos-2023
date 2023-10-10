@@ -1,10 +1,10 @@
 {
-  "compañías": [
+  "companias": [
     {
       "nombre": "Primera Compañía del Cuerpo de Bomberos de Maipú",
       "coordenadas": {
-        "latitud": -33.5114597,
-        "longitud": -70.7738438,
+        "latitud": -33.5109647,
+        "longitud": -70.7642696,
         "zoom": "15z"
       }
     },
@@ -19,8 +19,8 @@
     {
       "nombre": "Tercera Compañía del Cuerpo de Bomberos de Maipú",
       "coordenadas": {
-        "latitud": -33.5108427,
-        "longitud": -70.7635454,
+        "latitud": -33.5070803,
+        "longitud": -70.7536488,
         "zoom": "15.52z"
       }
     },
